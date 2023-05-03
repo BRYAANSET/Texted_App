@@ -44,6 +44,7 @@ public class register_class extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(register_class.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
