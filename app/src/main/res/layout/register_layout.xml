@@ -89,7 +89,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="130dp"
             android:backgroundTint="#5852F2"
-            android:text="@string/button_log_in"
+            android:text="SIGN UP"
             android:textColor="#EBEDF2"/>
         <TextView
             android:id="@+id/sign_in_desc"
@@ -117,13 +117,13 @@
             android:textSize="14sp"
             android:background="@android:color/transparent"/>
 
-        <ImageView
+        <ImageButton
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:id="@+id/back_arrow_createac"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            app:srcCompat="@drawable/arrow" />
+            android:background="@drawable/arrow"/>
 
 
     </RelativeLayout>

@@ -53,45 +53,27 @@
                 android:textColor="#EBEDF2"
                 android:textSize="19sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_phone_login"
+            <EditText
+                android:id="@+id/mainInputMail"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_below="@id/texted_text"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusTopStart="15dp"
-                >
+                android:ems="10"
+                android:background="@drawable/rounded_textinput"
+                android:inputType="textEmailAddress" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/phone_number"
-                    tools:ignore="TextContrastCheck" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/pass_input"
+            <EditText
+                android:id="@+id/mainInputPass"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_below="@id/texted_text"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="130dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxCornerRadiusTopEnd="15dp"
-                app:boxCornerRadiusTopStart="15dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/password"
-                    tools:ignore="TextContrastCheck" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+                android:ems="10"
+                android:background="@drawable/rounded_textinput"
+                android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/button_log_in"
@@ -101,7 +83,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="230dp"
                 android:backgroundTint="#5852F2"
-                android:text="@string/button_log_in"
+                android:text="LOG IN"
                 android:textColor="#EBEDF2" />
 
             <TextView
@@ -109,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/button_log_in"
-                android:layout_alignStart="@id/pass_input"
+                android:layout_alignStart="@id/mainInputPass"
                 android:layout_marginTop="30dp"
                 android:text="Already have a account?"
                 android:textColor="#EBEDF2"
@@ -120,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/button_log_in"
-                android:layout_alignEnd="@id/pass_input"
+                android:layout_alignEnd="@id/mainInputPass"
                 android:layout_marginTop="18dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="@string/sign_up_now"
@@ -134,7 +116,7 @@
                 android:layout_height="20dp"
                 android:layout_below="@id/texted_text"
                 android:layout_marginTop="60dp"
-                android:layout_alignRight="@id/input_phone_login"
+                android:layout_alignRight="@id/mainInputMail"
                 android:layout_marginRight="300dp"
                 android:contentDescription="@string/user_pic"
                 app:srcCompat="@drawable/contact" />
@@ -145,10 +127,12 @@
                 android:layout_height="20dp"
                 android:layout_below="@id/texted_text"
                 android:layout_marginTop="141dp"
-                android:layout_alignRight="@id/pass_input"
+                android:layout_alignRight="@id/mainInputPass"
                 android:layout_marginRight="300dp"
                 android:contentDescription="@string/user_pic"
                 app:srcCompat="@drawable/lock" />
+
+
 
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

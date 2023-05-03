@@ -22,24 +22,33 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bloginButt, bregistButt;
+    //We create the action buttons
+    Button bloginButt, bsigninButt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    bloginButt = findViewById(R.id.button_log_in);
+        bloginButt = findViewById(R.id.button_log_in);
+        bloginButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, contacts_class.class);
+                startActivity(intent);
 
-    bloginButt.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent intent = new Intent(MainActivity.this, contacts_class.class);
-            startActivity(intent);
-        }
-    });
 
+            }
+        });
+
+        bsigninButt = findViewById(R.id.sign_in);
+        bsigninButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, register_class.class);
+                startActivity(intent);
+            }
+        });
     }
-
 
 }
