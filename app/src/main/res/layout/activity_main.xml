@@ -61,6 +61,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"
                 android:ems="10"
+                android:hint=" Email"
                 android:background="@drawable/rounded_textinput"
                 android:inputType="textEmailAddress" />
 
@@ -72,6 +73,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="130dp"
                 android:ems="10"
+                android:hint=" Password"
                 android:background="@drawable/rounded_textinput"
                 android:inputType="textPassword" />
 

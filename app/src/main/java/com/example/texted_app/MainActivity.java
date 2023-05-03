@@ -3,8 +3,11 @@ package com.example.texted_app;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.TextUtils;
@@ -16,6 +19,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.texted_app.databinding.ActivityMainBinding;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +29,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     //We create the action buttons
     Button bloginButt, bsigninButt;
@@ -36,39 +43,53 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //We match the new buttons with their layout id
         MainInpmail = findViewById(R.id.mainInputMail);
         MainInpPass = findViewById(R.id.mainInputPass);
-
-        //We initialize the "login" button
         bloginButt = findViewById(R.id.button_log_in);
+        bsigninButt = findViewById(R.id.sign_in);
 
+
+        //On click login function
         bloginButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email, password;
-                email = String.valueOf(MainInpmail.getText());
-                password = String.valueOf(MainInpPass.getText());
 
-                if (TextUtils.isEmpty(email)){
-                    Toast.makeText(MainActivity.this, "Enter email",Toast.LENGTH_SHORT).show();
+                //Setting variables into an string
+                String email = MainInpmail.getText().toString().trim();
+                String password = MainInpPass.getText().toString().trim();
 
+                //Conditional to empty fields
+                if (TextUtils.isEmpty(email)) {
+                    MainInpmail.setError("Enter the email");
+                    return;
                 }
-
-                if (TextUtils.isEmpty(password)){
-                    Toast.makeText(MainActivity.this, "Enter password",Toast.LENGTH_SHORT).show();
-
+                if (TextUtils.isEmpty(password)) {
+                    MainInpPass.setError("Enter the password");
+                    return;
                 }
+                //Firebase autentication function
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                           @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Intent intent = new Intent(MainActivity.this, contacts_class.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    //We display a message if
+                                    Toast.makeText( MainActivity.this, "No se pudo iniciar sesión, compruebe sus datos y vuelva a intentarlo", Toast.LENGTH_SHORT).show();
+                                }
 
-                // When the button is clicked, it will open the "contacts" screen
-                Intent intent = new Intent(MainActivity.this, contacts_class.class);
-                startActivity(intent);
-
-
+                            }
+                        });
             }
         });
 
+
         //We initialize the "sign in" button
-        bsigninButt = findViewById(R.id.sign_in);
+
         bsigninButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+
     }
 
 }

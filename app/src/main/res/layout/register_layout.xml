@@ -23,46 +23,34 @@
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/text_username"
+            android:id="@+id/text_email"
             android:layout_width="230dp"
             android:layout_height="35dp"
             android:layout_below="@id/tittle_account"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
-            android:hint=" Full name"
+            android:layout_marginTop="90dp"
+            android:hint=" Email"
             android:inputType="textPersonName"
             android:background="@drawable/rounded_textinput"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck"></EditText>
 
         <EditText
-            android:id="@+id/phone_number"
+            android:id="@+id/full_name"
             android:layout_width="230dp"
             android:layout_height="35dp"
-            android:layout_below="@id/text_username"
+            android:layout_below="@id/text_email"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:hint=" Phone Number"
+            android:hint=" Full Name"
             android:inputType="textPersonName"
             android:background="@drawable/rounded_textinput"
             tools:ignore="TouchTargetSizeCheck"></EditText>
 
         <EditText
-            android:id="@+id/creat_phone_number"
-            android:layout_width="230dp"
-            android:layout_height="35dp"
-            android:layout_below="@id/phone_number"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:hint=" Phone Number"
-            android:inputType="textPassword"
-            android:background="@drawable/rounded_textinput"
-            tools:ignore="TouchTargetSizeCheck,DuplicateClickableBoundsCheck"></EditText>
-
-        <EditText
             android:id="@+id/accCreate_pass"
             android:layout_width="230dp"
             android:layout_height="35dp"
-            android:layout_below="@id/phone_number"
+            android:layout_below="@id/full_name"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:hint=" Password"
@@ -70,22 +58,12 @@
             android:background="@drawable/rounded_textinput"
             tools:ignore="TouchTargetSizeCheck"></EditText>
 
-        <EditText
-            android:id="@+id/accCreate_pass_confirm"
-            android:layout_width="230dp"
-            android:layout_height="35dp"
-            android:layout_below="@id/accCreate_pass"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:hint=" Confirm Password"
-            android:inputType="textPassword"
-            android:background="@drawable/rounded_textinput"
-            tools:ignore="TouchTargetSizeCheck"></EditText>
+
         <Button
-            android:id="@+id/button_log_in"
+            android:id="@+id/button_sign_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/accCreate_pass_confirm"
+            android:layout_below="@id/accCreate_pass"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="130dp"
             android:backgroundTint="#5852F2"
@@ -95,24 +73,24 @@
             android:id="@+id/sign_in_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/button_log_in"
+            android:layout_below="@id/button_sign_in"
             android:layout_marginTop="30dp"
             android:text="Already have a account? "
-            android:layout_alignRight="@id/accCreate_pass_confirm"
+            android:layout_alignRight="@id/accCreate_pass"
             android:layout_marginRight="80dp"
             android:textColor="#EBEDF2"
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/acc_sign_in"
+            android:id="@+id/acc_log_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/button_log_in"
+            android:layout_below="@id/button_sign_in"
             android:layout_alignLeft="@id/sign_in_desc"
             android:layout_marginLeft="160dp"
             android:layout_marginTop="18dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="SIGN IN"
+            android:text="LOG IN"
             android:textColor="#6F6BF2"
             android:textSize="14sp"
             android:background="@android:color/transparent"/>
