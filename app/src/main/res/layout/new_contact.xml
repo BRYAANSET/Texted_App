@@ -40,13 +40,13 @@
                 android:background="@drawable/_424134"/>
 
             <EditText
-                android:id="@+id/add_fullName"
+                android:id="@+id/add_eMail"
                 android:layout_width="230dp"
                 android:layout_height="35dp"
                 android:layout_below="@id/photo_contact"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
-                android:hint=" Full Name"
+                android:hint=" Email"
                 android:inputType="textPersonName"
                 android:background="@drawable/rounded_textinput"
                 tools:ignore="TouchTargetSizeCheck"></EditText>
@@ -56,19 +56,19 @@
                 android:layout_height="20dp"
                 android:layout_below="@id/photo_contact"
                 android:layout_marginTop="48dp"
-                android:layout_alignRight="@id/add_fullName"
+                android:layout_alignRight="@id/add_eMail"
                 android:layout_marginRight="240dp"
                 android:contentDescription="@string/user_pic"
                 app:srcCompat="@drawable/contact" />
 
             <EditText
-                android:id="@+id/add_Phone"
+                android:id="@+id/add_fullName"
                 android:layout_width="230dp"
                 android:layout_height="35dp"
-                android:layout_below="@id/add_fullName"
+                android:layout_below="@id/add_eMail"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:hint=" Phone Number"
+                android:hint=" FullName"
                 android:inputType="textPersonName"
                 android:background="@drawable/rounded_textinput"
                 tools:ignore="TouchTargetSizeCheck"></EditText>
@@ -78,14 +78,14 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="99dp"
                 android:layout_below="@id/photo_contact"
-                android:layout_alignRight="@id/add_Phone"
+                android:layout_alignRight="@id/add_fullName"
                 android:layout_marginRight="240dp"
                 app:srcCompat="@drawable/call" />
             <Button
                 android:id="@+id/button_add_contact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/add_Phone"
+                android:layout_below="@id/add_fullName"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="130dp"
                 android:backgroundTint="#5852F2"
