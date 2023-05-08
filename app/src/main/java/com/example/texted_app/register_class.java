@@ -63,22 +63,34 @@ public class register_class extends AppCompatActivity {
         });
 
     }
+
     public void registerUser(String email, String password, String fullName) {
+
+        // Creating a new user with email and password using Firebase Authentication.
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
+
+                            // If user registration is successful, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+
+                            // Creating a new HashMap object to store user data.
                             Map<String,Object>uData = new HashMap<>();
 
+                            // Adding email and full name of the user to the HashMap.
                             uData.put("email", email);
                             uData.put("fullName", fullName);
 
+                            // Adding the user data to Firestore database under 'users' collection using email as the document id.
                             db.collection("users").document(user.getEmail().toString()).set(uData);
+
+                            // Showing a success message using a Toast.
                             Toast.makeText( register_class.this, "User has been created succesfully", Toast.LENGTH_SHORT).show();
+
+                            // Moving to the main activity using an Intent.
                             Intent intent = new Intent(register_class.this, MainActivity.class);
                             startActivity(intent);
 
